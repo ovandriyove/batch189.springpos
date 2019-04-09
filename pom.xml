@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.bootcamp</groupId>
-  <artifactId>batch189.pos</artifactId>
+  <artifactId>batch189.springpos</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>batch189.pos Maven Webapp</name>
+  <name>batch189.springpos Maven Webapp</name>
   <url>http://maven.apache.org</url>
 	<properties>
 		<org.springframework.version>4.2.6.RELEASE</org.springframework.version>
@@ -184,16 +184,16 @@
 			<version>1.4</version>
 		</dependency>
 		
-		<!-- sitemesh -->
+		<!-- sitemesh
 		<dependency>
 			<groupId>opensymphony</groupId>
 			<artifactId>sitemesh</artifactId>
 			<version>2.4.2</version>
-		</dependency>
+		</dependency> -->
 
 	</dependencies>
 	<build>
-		<finalName>batch189.pos</finalName>
+		<finalName>batch189.springpos</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
