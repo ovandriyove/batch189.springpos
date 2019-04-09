@@ -43,8 +43,8 @@
     <filter-name>sitemesh</filter-name>
     <url-pattern>/*</url-pattern>
     <dispatcher>REQUEST</dispatcher>
-    <dispatcher>FORWARD</dispatcher> -->
-  </filter-mapping>
+    <dispatcher>FORWARD</dispatcher> 
+  </filter-mapping> -->
   <listener>
     <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
   </listener>
