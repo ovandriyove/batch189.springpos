@@ -2,62 +2,199 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-  	<script src="assets/js/jquery.min.js"></script>
-  	<script src="assets/js/popper.min.js"></script>
-  	<script src="assets/js/bootstrap.min.js"></script>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Barang</title>
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	
+<!--CSS File-->
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<!--Bootstrap 3.3.7-->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<!--Ionicons-->
+	<link rel="stylesheet" href="assets/css/ionicons.css">
+	<!--DataTables-->
+	<link rel="stylesheet" href="assets/css/dataTables.bootstrap.min.css">
+	<!-- bootstrap datepicker -->
+	<link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
+	<!--Theme style-->
+	<link rel="stylesheet" href="assets/css/AdminLTE.min.css">
+	<!--AdminLTE Skins-->
+	<link rel="stylesheet" href="assets/css/skin-black.min.css">
+	<!--Google font-->
+	<link rel="stylesheet" href="assets/css/fonts.googleapis.css">	
+
+	<!--JS File-->
+	<!--jQuery 3-->
+	<script src="assets/js/jquery.min.js"></script>
+	<!--Bootstrap 3.3.7-->
+	<script src="assets/js/bootstrap.min.js"></script>
+	<!--DataTables-->
+	<script src="assets/js/jquery.dataTables.min.js"></script>
+	<script src="assets/js/dataTables.bootstrap.min.js"></script>
+	<!-- bootstrap datepicker -->
+	<script src="assets/js/bootstrap-datepicker.min.js"></script>
+	<!--AdminLTE App-->
+	<script src="assets/js/adminlte.min.js"></script>
 </head>
 
-<body class="bg-light">
-    <div class="container">
-        <div class="row">
-            
-            <div class="col-md-3">
-            	<h4 class="mb-3 mt-3" >Form Barang</h4>
-            	<form id="form-barang">
-                <div class="mb-3">
-                    Kode Barang <input type="text" class="form-control" id="kodeBarang" name="kodeBarang">
-                </div>
-                <div class="mb-3">
-                    Nama Barang <input type="text" class="form-control" id="namaBarang" name="namaBarang">
-                </div>
-                <div class="mb-3">
-                    Harga <input type="text" class="form-control" id="harga" name="harga">
-                </div>
-                <div class="mb-3">
-                    Satuan <input type="text" class="form-control" id="satuan" name="satuan">
-                </div>
-                <hr class="mb-4">
-                <input class="btn btn-primary btn-lg" type="button" value="Submit" onclick="simpan()">
-                </form>
-            </div>
-            
-            <div class="col-md-9">
-            	<h4 class="mb-3 mt-3">Data Barang</h4>
-				<div class="table-responsive">
-				  <table class="table table-striped table-sm">
-				    <thead>
-				      <tr>
-				        <th>Kode Barang</th>
-				        <th>Nama Barang</th>
-				        <th>Harga</th>
-				        <th>Satuan</th>
-				        <th>Action</th>
-				      </tr>
-				    </thead>
-				    <tbody id="data-barang">
-				    </tbody>
-				  </table>
-				</div>    
-            </div>
-            
-        </div>
-    </div>
-	<script>
+<body class="hold-transition skin-black sidebar-mini">
+<div class="wrapper">
 
+        <header class="main-header">
+
+            <!-- Logo -->
+            <a href="index2.html" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>S</b>P</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>Spring</b>POS</span>
+            </a>
+
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account Menu -->
+                        <li class="dropdown user user-menu">
+                            <!-- Menu Toggle Button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <!-- The user image in the navbar-->
+                                <img src="${pageContext.request.contextPath}/assets/img/iHateMyLife.jpg" class="user-image" alt="User Image">
+                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                <span class="hidden-xs">iHateMyLife</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- The user image in the menu -->
+                                <li class="user-header">
+                                    <img src="${pageContext.request.contextPath}/assets/img/iHateMyLife.jpg" class="img-circle" alt="User Image">
+
+                                    <p>
+										iHateMyLife
+										<small>Bootcamp Trainee</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">Sign Out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+		</header>
+
+		<!--Left side column, contains the logo and sidebar-->
+		<aside class="main-sidebar">
+			<!--sidebar: style can be found in sidebar.less-->
+			<section class="sidebar">
+				<!--Sibar Menu-->
+				<ul class="sidebar-menu" data-widget="tree">
+					<li class="header">Menu</li>
+					<li class="active"><a href="barang"><i class="fa fa-tags"></i><span>Barang</span></a></li>
+					<li><a href="order"><i class="fa fa-shopping-cart"></i><span>Order</span></a></li>
+				</ul>
+			</section>
+		</aside>
+
+
+		<!--Content Wrapper-->
+		<div class="content-wrapper">
+			<!--Content Header-->
+			<section class="content-header">
+				<h1>Barang</h1>
+			</section>
+
+			<!--Main Content-->
+			<section class="content">
+			
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="box">
+							<form id="form-barang">
+								<div class="box-body">
+									<div class="row">
+										<div class="col-md-6">
+										<div class="form-group">
+											Kode Barang <input type="text" class="form-control" name="kodeBarang" id="kodeBarang">
+										</div>
+										<div class="form-group">
+											Nama Barang <input type="text" class="form-control" name="namaBarang" id="namaBarang">
+										</div>
+										</div>
+										<div class="col-md-6">	
+										<div class="form-group">
+											Harga Barang 
+											<div class="input-group">
+                       							<span class="input-group-addon">Rp</span>
+                          						<input type="number" class="form-control" name="harga" id="harga">
+                        					</div>
+										</div>
+										<div class="form-group">
+											Satuan <input type="text" class="form-control" name="satuan" id="satuan">
+										</div>
+									</div>
+								</div>
+							</div>	
+							<div class="box-footer">
+								<button type="button" class="btn btn-primary" onclick="simpan()">Submit</button>
+							</div>
+							</form>		
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="box">
+							<div class="box-header">
+								<h3 class="box-title">Table Data Barang</h3>
+								<div class="box-tools">
+									<div class="input-group input-group-sm" style="width: 150px;">
+										<input type="text" id="search" class="form-control pull-right" placeholder="Search">
+										<div class="input-group-btn">
+											<button type="button" class="btn btn-default" onclick="loadData()">
+												<i class="fa fa-search"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="box-body">
+								<table id="tabelBarang" class="table table-bordered table-striped">
+									<thead>
+										<tr>
+										  <th>Kode Barang</th>
+										  <th>Nama Barang</th>
+										  <th>Harga Barang</th>
+										  <th>Satuan</th>
+								 	 	  <th>Action</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+   
+	<script>
 		var modeSubmit = 'insert';
+		var tabelBarang;
 
 		function getFormData($form){
 		    var unindexed_array = $form.serializeArray();
@@ -67,36 +204,40 @@
 		    });
 		    return indexed_array;
 		}
+
+		function loadData() {
+			var search = $('#search').val();
+			var url = '';
+			if (search == '') {
+				url = 'barang/'
+			} else {
+				url = 'barang/search/?namaBarang=' + search
+			}
+			$.ajax({
+				type: 'get',
+				url: url,
+				success: function(d) {
+					tampilkanData(d);
+				},
+				error: function(d) {
+					console.log('Error');
+				}
+			});
+		}
 		
 		function tampilkanData(d) {
-			var s = '';
+			tabelBarang.clear().draw();
 			$(d).each(function(index, element) {
-				s += '<tr>';
-				s += '<td>' + element.kodeBarang + '</td>';
-				s += '<td>' + element.namaBarang + '</td>';
-				s += '<td>' + element.harga + '</td>';
-				s += '<td>' + element.satuan + '</td>';
-				s += '<td>' + 
-						'<input class="btn btn-secondary btn-sm" type="button" value="Edit" onclick="load(\'' + element.kodeBarang + '\')"> &nbsp;' +
-						'<input class="btn btn-danger btn-sm" type="button" value="Hapus" onclick="hapus(\'' + element.kodeBarang + '\')">' +
-				     '</td>';
-			    s += '</tr>';
+				tabelBarang.row.add([
+					element.kodeBarang,
+					element.namaBarang,
+					element.harga,
+					element.satuan,
+						'<input class="btn btn-default btn-sm" type="button" value="Edit" onclick="load(\'' + element.kodeBarang + '\')"> &nbsp;' +
+         				'<input class="btn btn-danger btn-sm" type="button" value="Hapus" onclick="hapus(\'' + element.kodeBarang + '\')">'
+				]).draw();
 			})
-            $('#data-barang').html(s);
 		}
-
-        function loadData() {
-            $.ajax({
-                type: 'get',
-                url: 'barang/',
-                success: function(d) {
-                    tampilkanData(d);
-                },
-                error: function(d) {
-					console.log('Error');
-                }
-            });
-        }
 
         function simpan() {
             var method;
@@ -153,9 +294,13 @@
         }
 
         $(document).ready(function() {
-            loadData();
+			loadData();
+			tabelBarang = $('#tabelBarang').DataTable({
+				'searching' : false,
+				'lengthChange' : false,
+				'lengthMenu' : [10]
+			});
         });
-
 	</script>
 </body>
 </html>
