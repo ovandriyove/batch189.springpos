@@ -42,16 +42,16 @@
 </head>
 
 <body class="hold-transition skin-black sidebar-mini">
-    <div class="wrapper">
+  <div class="wrapper">
 
         <header class="main-header">
 
             <!-- Logo -->
             <a href="index2.html" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>S</b>P</span>
+                <span class="logo-mini"><b>POS</b></span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Spring</b>POS</span>
+                <span class="logo-lg"><b>Point </b>of Sale</span>
             </a>
 
             <!-- Header Navbar -->
@@ -173,7 +173,7 @@
 										</div>
 										<div class="col-md-2">
 											<div class="form-group">
-												&nbsp <br> <button type="button" class="btn btn-primary" onclick="tambahOrderDetail()">Tambah Barang</button>
+												&nbsp<br> <button type="button" class="btn btn-primary" onclick="tambahOrderDetail()">Tambah Barang</button>
 											</div>
 										</div>
 										<div class="col-md-1">
